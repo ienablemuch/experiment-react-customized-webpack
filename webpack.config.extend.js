@@ -1,3 +1,5 @@
+const path = require("path");
+
 /**
  * Project's customized Webpack Configuration Extension
  * ----------------------------------------------------
@@ -15,5 +17,11 @@
 
 module.exports = (webpackConfig, env, { paths }) => {
     // here you can extend your webpackConfig at will
-    return webpackConfig
-}
+
+    webpackConfig.resolve.alias = {
+        ...webpackConfig.alias,
+        love: path.resolve(__dirname, "src", "shared")
+    };
+
+    return webpackConfig;
+};
