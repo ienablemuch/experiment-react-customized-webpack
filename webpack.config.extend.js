@@ -19,7 +19,7 @@ module.exports = (webpackConfig, env, { paths }) => {
     // here you can extend your webpackConfig at will
 
     webpackConfig.resolve.alias = {
-        ...webpackConfig.alias,
+        ...webpackConfig.resolve.alias,
         love: path.resolve(__dirname, "src", "shared")
     };
 
